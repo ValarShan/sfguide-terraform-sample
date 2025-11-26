@@ -9,7 +9,7 @@ terraform {
 locals {
   organization_name = "pqfcspq"
   account_name      = "if19845"
-  password  = "Git25"
+  private_key_path  = "~/.ssh/snowflake_tf_snow_key.p8"
 }
 
 provider "snowflake" {
@@ -17,8 +17,8 @@ provider "snowflake" {
     account_name      = local.account_name
     user              = "DEPLOYER_SVC_VS"
     role              = "SYSADMIN"
-    authenticator     = "externalbrowser"
-    password          = local.password
+    authenticator     = "SNOWFLAKE_JWT"
+    private_key       = file(local.private_key_path)
 }
 
 resource "snowflake_database" "tf_db_vs" {
