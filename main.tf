@@ -15,6 +15,7 @@ locals {
 provider "snowflake" {
     organization_name = local.organization_name
     account_name      = local.account_name
+    username          = "VALAR.SHAN"
     user              = "DEPLOYER_SVC_VS"
     role              = "SYSADMIN"
     authenticator     = "SNOWFLAKE_JWT"
