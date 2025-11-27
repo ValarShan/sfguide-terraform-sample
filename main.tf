@@ -37,3 +37,30 @@ resource "snowflake_warehouse" "tf_warehouse_vs" {
   enable_query_acceleration = false
   initially_suspended       = true
 }
+
+module "databases" {
+  source         = "./modules/databases"
+  env            = var.env
+  retention_days = var.retention_days
+}
+
+module "roles" {
+  source = "./modules/roles"
+  env    = var.env
+}
+
+module "database_object_grants" {
+  source                          = "./modules/database_object_grants"
+  env                             = var.env
+  env_raw_db                      = module.databases.env_raw_db.name
+  env_raw_db_reader_role          = module.roles.env_raw_db_reader_role.name
+  env_raw_db_writer_role          = module.roles.env_raw_db_writer_role.name
+}
+
+module "role_grants" {
+  source                          = "./modules/role_grants"
+  env                             = var.env
+  env_raw_db                      = module.databases.env_raw_db.name
+  env_raw_db_reader_role          = module.roles.env_raw_db_reader_role.name
+  env_raw_db_writer_role          = module.roles.env_raw_db_writer_role.name
+}

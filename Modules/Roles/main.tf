@@ -10,9 +10,9 @@ terraform {
 # DB Level Roles
 
 resource "snowflake_role" "env_raw_db_reader_role" {
-  name = format("%s%s", var.env, "_RAW_DB_READER_ROLE")
+  name = format("%s%s", var.env, "_raw_db_reader_role")
 }
 
 resource "snowflake_role" "env_raw_db_writer_role" {
-  name = format("%s%s", var.env, "_RAW_DB_WRITER_ROLE")
+  name = format("%s%s", var.env, "_raw_db_writer_role")
 }

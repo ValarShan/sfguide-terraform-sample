@@ -7,7 +7,7 @@ terraform {
   }
 }
 
-# DATABASE LEVEL GRANTS
+#DATABASE LEVEL GRANTS
 ## RAW_DB GRANTS
 ## "env_raw_db_reader_grant" - future we need to parametrised the envs too
 resource "snowflake_database_grant" "env_raw_db_reader_grant" {
