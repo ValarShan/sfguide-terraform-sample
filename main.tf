@@ -8,9 +8,9 @@ terraform {
 }
 
 provider "snowflake" {
-  username         = var.organization_name
+  username         = var.username
   password         = var.private_key_path   # or use private_key_path
-  account          = var.user    # e.g. "if19845.eu-west-1"
+  account          = var.organization_name    # e.g. "if19845.eu-west-1"
   role             = "SYSADMIN"
 }
 /*
