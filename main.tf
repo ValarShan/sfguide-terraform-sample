@@ -1,6 +1,30 @@
 terraform {
   required_providers {
     snowflake = {
+      source  = "Snowflake-Labs/snowflake"
+      version = "0.71.0"
+    }
+  }
+}
+
+locals {
+  organization_name = "pqfcspq"
+  account_name      = "if19845"
+  private_key_path  = "~/.ssh/snowflake_tf_snow_key.p8"
+}
+
+
+provider "snowflake" {
+  username = var.snowflake_username
+  password = var.snowflake_password
+  account  = var.snowflake_account
+  role     = "SYSADMIN"
+}
+
+/*
+terraform {
+  required_providers {
+    snowflake = {
       source = "snowflakedb/snowflake"
     }
   }
@@ -15,13 +39,13 @@ locals {
 provider "snowflake" {
     organization_name = local.organization_name
     account_name      = local.account_name
-    username          = "VALAR.SHAN"
+    username          = "VALAR SHAN"
     user              = "DEPLOYER_SVC_VS"
     role              = "SYSADMIN"
     authenticator     = "SNOWFLAKE_JWT"
     private_key       = file(local.private_key_path)
 }
-
+*/
 resource "snowflake_database" "tf_db_vs" {
   name         = "TF_DEMO_DB_VS"
   is_transient = false

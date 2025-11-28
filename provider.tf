@@ -1,4 +1,4 @@
-terraform {
+/*terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
@@ -10,3 +10,4 @@ terraform {
 provider "snowflake" {
   profile = "SANDBOX_DEPLOYER"
 }
+*/
