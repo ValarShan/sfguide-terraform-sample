@@ -7,21 +7,22 @@ terraform {
   }
 }
 
-locals {
-  organization_name = "pqfcspq"
-  account_name      = "if19845"
-  private_key_path  = "~/.ssh/snowflake_tf_snow_key.p8"
-}
-
-
 provider "snowflake" {
-  username = var.snowflake_username
-  password = var.snowflake_password
-  account  = var.snowflake_account
-  role     = "SYSADMIN"
+  username         = var.organization_name
+  password         = var.private_key_path   # or use private_key_path
+  account          = var.account_name    # e.g. "if19845.eu-west-1"
+  role             = "SYSADMIN"
+}
+/*
+provider "snowflake" {
+  snowflake_username = "Valar Shan"
+  private_key_path   = "~/.ssh/snowflake_tf_snow_key.p8"
+  organization_name  = "pqfcspq"
+  account_name       = "if19845"
+  role               = "SYSADMIN"
 }
 
-/*
+
 terraform {
   required_providers {
     snowflake = {
@@ -85,7 +86,8 @@ module "database_object_grants" {
 module "role_grants" {
   source                          = "./modules/role_grants"
   env                             = var.env
-  env_raw_db                      = module.databases.env_raw_db.name
+  env_analyst_role                = module.roles.env_analyst_role.name
+  env_loader_role                 = module.roles.env_loader_role.name
   env_raw_db_reader_role          = module.roles.env_raw_db_reader_role.name
   env_raw_db_writer_role          = module.roles.env_raw_db_writer_role.name
 }
