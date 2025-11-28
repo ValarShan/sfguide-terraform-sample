@@ -17,10 +17,10 @@ resource "snowflake_role" "env_raw_db_writer_role" {
   name = format("%s%s", var.env, "_raw_db_writer_role")
 }
 
-resource "snowflake_role" "var_env_analyst_role" {
+resource "snowflake_role" "env_raw_db_analyst_role" {
   name = format("%s%s", var.env, "_raw_db_analyst_role")
 }
 
-resource "snowflake_role" "var_env_loader_role" {
+resource "snowflake_role" "env_raw_db_loader_role" {
   name = format("%s%s", var.env, "_raw_db_loader_role")
 }
