@@ -8,11 +8,11 @@ terraform {
 }
 
 provider "snowflake" {
-  username         = var.loginname
+  user             = var.loginname
   password         = var.password   # 
   account          = var.account_name
   #organization     = var.organization_name   # e.g. "if19845.eu-west-1"
-  role             = "SYSADMIN"
+  role             = var.role
 }
 /*
 provider "snowflake" {
