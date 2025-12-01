@@ -17,8 +17,8 @@ provider "snowflake" {
 */
 
 locals {
-  organization_name   = "PQFCSPQ"
-  account_name        = "IF19845"
+ # organization_name   = "PQFCSPQ"
+  #account_name        = "IF19845"
   user                = "VALARSHAN" 
   password            = "Christmas@2025"   
   account             = "PQFCSPQ-IF19845"
@@ -27,8 +27,8 @@ locals {
 }
 
 provider "snowflake" {
-  organization_name = local.organization_name
-  account_name      = local.account_name
+ # organization_name = local.organization_name
+ # account_name      = local.account_name
   user             = local.user
   password         = local.password   
   account          = local.account
