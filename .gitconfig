@@ -1,2 +1,4 @@
-[user]
-	name = valar shan
+user 			= "VALARSHAN"
+password  		= "Christmas@2025"
+account   		= "PQFCSPQ-IF19845"   # from your Snowflake login URL
+role      		= "ACCOUNTADMIN"
