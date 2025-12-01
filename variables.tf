@@ -8,8 +8,8 @@ variable "retention_days" { default = 1 }
 
 variable "password" {default ="Christmas@2025"}
 
-variable "loginname" {default ="VALARSHAN"}
+variable "user" {default ="VALARSHAN"}
 
-variable "account_name" {default ="PQFCSPQ-IF19845"}
+variable "account" {default ="PQFCSPQ-IF19845"}
 
 variable "role" {default = "ACCOUNTADMIN"}
