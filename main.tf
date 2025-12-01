@@ -8,30 +8,6 @@ terraform {
   }
 }
 
-provider "snowflake" {
-  user             = var.loginname
-  password         = var.password   
-  account          = var.account_name
-  #organization     = var.organization_name   # e.g. "if19845.eu-west-1"
-  role             = var.role
-}
-
-provider "snowflake" {
-  snowflake_username = "Valar Shan"
-  private_key_path   = "~/.ssh/snowflake_tf_snow_key.p8"
-  organization_name  = "pqfcspq"
-  account_name       = "if19845"
-  role               = "SYSADMIN"
-}
-
-
-terraform {
-  required_providers {
-    snowflake = {
-      source = "snowflakedb/snowflake"
-    }
-  }
-}
 
 locals {
   organization_name = "pqfcspq"
@@ -49,10 +25,7 @@ provider "snowflake" {
     private_key       = file(local.private_key_path)
 }
 
-resource "snowflake_database" "tf_db_vs" {
-  name         = "TF_DEMO_DB_VS"
-  is_transient = false
-}
+
 */
 
 resource "snowflake_warehouse" "tf_warehouse_vs" {
