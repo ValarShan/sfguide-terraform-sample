@@ -11,5 +11,5 @@ provider "snowflake" {
   user             = var.login_name
   password         = var.password   
   account          = var.account_name
-  role             = var.role
+  #role             = var.role
 }
