@@ -1,3 +1,4 @@
+/*
 terraform {
   required_providers {
     snowflake = {
@@ -9,12 +10,12 @@ terraform {
 
 provider "snowflake" {
   user             = var.loginname
-  password         = var.password   # 
+  password         = var.password   
   account          = var.account_name
   #organization     = var.organization_name   # e.g. "if19845.eu-west-1"
   role             = var.role
 }
-/*
+
 provider "snowflake" {
   snowflake_username = "Valar Shan"
   private_key_path   = "~/.ssh/snowflake_tf_snow_key.p8"
