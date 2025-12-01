@@ -1,7 +1,7 @@
 variable "env"      { default = "TRAIL" }
 variable "warehouse_size" { default = "XSMALL" }
 variable "retention_days" { default = 1 }
-variable "user"     { default = "VALARSHAN" }
+variable "login_name"     { default = "VALARSHAN" }
 variable "password" { default = "Christmas@2025" }
-variable "account"  { default = "PQFCSPQ-IF19845" }
+variable "account_name"  { default = "PQFCSPQ-IF19845" }
 variable "role"     { default = "ACCOUNTADMIN" }
