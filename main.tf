@@ -8,9 +8,10 @@ terraform {
 }
 
 provider "snowflake" {
-  username         = var.username
-  password         = var.private_key_path   # or use private_key_path
-  account          = var.organization_name    # e.g. "if19845.eu-west-1"
+  username         = var.loginname
+  password         = var.password   # 
+  account          = var.account_name
+  #organization     = var.organization_name   # e.g. "if19845.eu-west-1"
   role             = "SYSADMIN"
 }
 /*
@@ -46,11 +47,12 @@ provider "snowflake" {
     authenticator     = "SNOWFLAKE_JWT"
     private_key       = file(local.private_key_path)
 }
-*/
+
 resource "snowflake_database" "tf_db_vs" {
   name         = "TF_DEMO_DB_VS"
   is_transient = false
 }
+*/
 
 resource "snowflake_warehouse" "tf_warehouse_vs" {
   name                      = "TF_DEMO_WH_VS"

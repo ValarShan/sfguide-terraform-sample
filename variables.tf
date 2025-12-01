@@ -4,8 +4,10 @@ variable "warehouse_size" { default = "XSMALL" }
 
 variable "retention_days" { default = 1 }
 
-variable "organization_name" {default ="pqfcspq-if19845"}
+#variable "organization_name" {default ="PQFCSPQ.eu-west-1"}
 
-variable "private_key_path" {default ="~/.ssh/snowflake_tf_snow_key.p8"}
+variable "password" {default ="Christmas@2025"}
 
-variable "username" {default ="VALARSHAN"}
+variable "loginname" {default ="VALARSHAN"}
+
+variable "account_name" {default ="PQFCSPQ-IF19845"}
