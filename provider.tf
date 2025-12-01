@@ -7,12 +7,6 @@ terraform {
   }
 }
 
-provider "snowflake" {
-  user             = var.user
-  password         = var.password   
-  account          = var.account
-  role             = var.role
-}
 /*
 provider "snowflake" {
   user     = "VALARSHAN"
@@ -21,3 +15,22 @@ provider "snowflake" {
   role     = "ACCOUNTADMIN"
 }
 */
+
+locals {
+  organization_name   = "PQFCSPQ"
+  account_name        = "IF19845"
+  user                = "VALARSHAN" 
+  password            = "Christmas@2025"   
+  account             = "PQFCSPQ-IF19845"
+  role                = "ACCOUNTADMIN"
+
+}
+
+provider "snowflake" {
+  organization_name = local.organization_name
+  account_name      = local.account_name
+  user             = local.user
+  password         = local.password   
+  account          = local.account
+  role             = local.role
+}
