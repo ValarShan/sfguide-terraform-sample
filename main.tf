@@ -24,7 +24,7 @@ module "roles" {
 module "database_objects" {
   source                          = "./modules/database_objects"
   env                             = var.env
-  env_eraw_db                     = module.databases.env_raw_db.name
+  env_raw_db                     = module.databases.env_raw_db.name
 }
 
 module "database_object_grants" {
