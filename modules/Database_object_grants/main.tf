@@ -2,7 +2,7 @@ terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = "0.93.0"
+      version = "0.74.0"
     }
   }
 }
@@ -11,7 +11,7 @@ terraform {
 ## RAW_DB GRANTS
 ## "env_raw_db_reader_grant" - future we need to parametrised the envs too
 
-/*commented out below resources for 0.93 upgrade
+
 resource "snowflake_database_grant" "env_raw_db_reader_grant" {
   database_name          = var.env_raw_db
   privilege              = "USAGE"
@@ -26,7 +26,7 @@ resource "snowflake_database_grant" "env_raw_db_writer_grant" {
   enable_multiple_grants = true
   roles                  = [var.env_raw_db_writer_role]
 }
-*/
+/*
 # Old resource removed
 removed {  
   from = snowflake_database_grant.env_raw_db_reader_grant  
@@ -54,4 +54,5 @@ resource "snowflake_grant_privileges_to_account_role" "env_raw_db_writer_grant" 
     object_type = "DATABASE"  
   }  
 }
+*/
   

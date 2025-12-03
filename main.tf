@@ -43,3 +43,24 @@ module "role_grants" {
   env_raw_db_reader_role          = module.roles.env_raw_db_reader_role.name
   env_raw_db_writer_role          = module.roles.env_raw_db_writer_role.name
 }
+/*
+#Database_objects_grants
+import {
+  to = module.database_object_grants.snowflake_grant_privileges_to_account_role.env_raw_db_reader_grant
+  id = format("%s%s%s", module.roles.env_raw_db_reader_role.name,"|false|false|USAGE|OnAccountObject|DATABASE|",module.databases.env_raw_db.name)
+}
+import {
+  to = module.database_object_grants.snowflake_grant_privileges_to_account_role.env_raw_db_writer_grant
+  id = format("%s%s%s", module.roles.env_raw_db_writer_role.name,"|false|false|USAGE|OnAccountObject|DATABASE|",module.databases.env_raw_db.name)
+}
+
+#Role_grants
+import {
+  to = module.role_grants.snowflake_grant_account_role.env_raw_db_reader_role_grant
+  id = format("\"%s\"|%s|\"%s\"", module.roles.env_raw_db_reader_role.name, "ROLE", module.roles.env_raw_db_analyst_role.name)
+}
+import {
+  to = module.role_grants.snowflake_grant_account_role.env_raw_db_writer_role_grant
+  id = format("\"%s\"|%s|\"%s\"", module.roles.env_raw_db_writer_role.name, "ROLE", module.roles.env_raw_db_loader_role.name)
+}
+*/
