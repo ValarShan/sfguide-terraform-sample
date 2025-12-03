@@ -2,7 +2,7 @@ terraform {
   required_providers {
     snowflake = {
       source  = "Snowflake-Labs/snowflake"
-      version = "0.74.0"
+      version = "0.92.0"
     }
   }
 }
@@ -18,6 +18,7 @@ resource "snowflake_role_grants" "env_raw_db_writer_role_grant" {
   roles     = [var.env_raw_db_loader_role]
 }
 /*
+#Below Version 0.93
 # Old resource removed
 removed {  
   from = snowflake_role_grants.env_raw_db_reader_role_grant 

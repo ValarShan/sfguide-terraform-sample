@@ -44,6 +44,7 @@ module "role_grants" {
   env_raw_db_writer_role          = module.roles.env_raw_db_writer_role.name
 }
 /*
+#Below Version 0.93
 #Database_objects_grants
 import {
   to = module.database_object_grants.snowflake_grant_privileges_to_account_role.env_raw_db_reader_grant
