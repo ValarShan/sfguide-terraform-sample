@@ -24,11 +24,13 @@ terraform {
 */
 
 locals {
+  organization_name = "PQFCSPQ"
   account_name      = "IF19845"
   private_key_path  = "~/.ssh/snowflake_tf_snow_key.p8"
 }
 
 provider "snowflake" {
+  organization_name = local.organization_name
   account_name      = local.account_name
   user              = "TERRAFORM_SVC"
   role              = "SYSADMIN"
